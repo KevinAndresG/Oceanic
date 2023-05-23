@@ -1,4 +1,3 @@
-import './App.css';
 import '@progress/kendo-theme-default/dist/all.css';
 import { Header } from './components/Header/Header';
 import { Home } from './components/Home/Home';
