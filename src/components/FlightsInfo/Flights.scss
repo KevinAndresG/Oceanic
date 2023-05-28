@@ -175,6 +175,24 @@
             }
         }
 
+        .origin {
+            height: 100px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            .orig {
+                margin-top: -20px;
+            }
+
+            .or {
+                letter-spacing: 1px;
+                display: flex;
+                justify-content: center;
+                padding-top: 50px;
+            }
+        }
+
         .out {
             padding: 5px;
             height: 50px;

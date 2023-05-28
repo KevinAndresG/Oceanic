@@ -10,6 +10,7 @@ export const Place = ({ cerrarModal, placeS, countries }) => {
         cerrarModal("");
     }
     function selectPlace(value) {
+        console.log("This is - value = ", value);
         cerrarModal("");
         placeS(value);
     }
