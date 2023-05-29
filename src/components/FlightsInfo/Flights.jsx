@@ -42,6 +42,8 @@ export const Flights = () => {
         if (countries.length === 0) {
             countriesApi();
         }
+    });
+    useEffect(() => {
         console.log("show form", flightForm);
     }, [flightForm]);
     const flightData = () => {
