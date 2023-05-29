@@ -26,7 +26,7 @@ export const Flights = () => {
     const [adultos, setAdultos] = useState(0);
     const [niños, setNiños] = useState(0);
     const [bebes, setBebes] = useState(0);
-    const [countries, setcountries] = useState([]);
+    const [countries, setCountries] = useState([]);
     const [code, setCode] = useState("");
     const [flightForm, setFlightForm] = useState({
         type: "",
@@ -39,8 +39,11 @@ export const Flights = () => {
     });
     let m = [];
     useEffect(() => {
-        countriesApi();
-    }, []);
+        if (countries.length === 0) {
+            countriesApi();
+        }
+        console.log("form", flightForm);
+    }, [flightForm]);
     const flightData = () => {
         setFlightForm({
             ...flightForm,
@@ -50,9 +53,8 @@ export const Flights = () => {
             leave: outDate,
             return: tripeType !== "sencillo" ? retDate : null,
             passengers: passengersAmount,
-            code: code,
+            code: code.toUpperCase(),
         });
-        console.log("form", flightForm);
     };
     const countriesApi = () => {
         let prevLet = "";
@@ -67,15 +69,13 @@ export const Flights = () => {
                     }
                     n++;
                 }
-                setcountries(m);
+                setCountries(m);
             })
             .catch((err) => {
                 console.log(err);
             });
-        // console.log("This is - m = ", countries);
     };
     function codeChange(value) {
-        // console.log("This is - value = ", value);
         setCode(value.target.value);
     }
     function place(value) {
@@ -307,6 +307,7 @@ export const Flights = () => {
                     <div className="inp code">
                         <span>¿Tienes un código de promoción?</span>
                         <input
+                            className="code-inp"
                             onInput={codeChange}
                             type="text"
                             placeholder="-- -- -- --"
