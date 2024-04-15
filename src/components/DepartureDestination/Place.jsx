@@ -25,7 +25,7 @@ export const Place = ({ cerrarModal, placeS, countries }) => {
         <div className="place-modal">
             <div className="place--container">
                 <div className="dest-head">
-                    <h1>¿ A dónde viajas?</h1>
+                    <h1>¿A dónde viajas?</h1>
                     <img
                         onClick={cerrarModalH}
                         className="x"

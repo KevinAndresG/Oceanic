@@ -24,7 +24,7 @@ export const Available = () => {
         {
             icon: faUserGroup,
             title: "Grupos",
-            desc: "Obtén una cotizacón para grupos de mås de 9 personas.",
+            desc: "Obtén una cotizacón para grupos de más de 9 personas.",
         },
         {
             icon: faBed,
